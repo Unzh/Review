@@ -9,15 +9,21 @@ package com.review.demo.Executor;
  */
 public class SubThread extends Thread{
 
-    static {
-        System.out.println(currentThread().getName());
-        System.out.println("SubThread静态代码块.....");
-    }
-
     public SubThread() {
         System.out.println(currentThread().getName());
         System.out.println("SubThread构造方法.....");
     }
+
+    static {
+        try {
+            sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(currentThread().getName());
+        System.out.println("SubThread静态代码块.....");
+    }
+
 
     @Override
     public void run() {
