@@ -107,6 +107,11 @@ public class CommonTest {
     }
 
 
+    /**
+     * String 字符串倒排
+     * @param originStr
+     * @return
+     */
     public static String reverse(String originStr) {
         if (originStr == null || originStr.length() <= 1) {
             return originStr;
