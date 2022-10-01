@@ -35,6 +35,7 @@ public class Question4 {
         if (CollectionUtils.isEmpty(transcripts)) {
             return;
         }
+        //方法一
         /*for(Transcript item:transcripts ){
             if (mapCache.get(item.getLesson())!=null&&mapCache.get(item.getLesson()).size() > 0) {
                 if(item.getScore()>mapCache.get(item.getLesson()).get(0).getScore()){
@@ -52,6 +53,7 @@ public class Question4 {
                 mapCache.put(item.getLesson(), transcriptList);
             }
         }*/
+
         transcripts.forEach(e->{
             if (mapCache.get(e.getLesson())!=null&&mapCache.get(e.getLesson()).size() > 0) {
                 if(e.getScore()>mapCache.get(e.getLesson()).get(0).getScore()){
@@ -72,7 +74,7 @@ public class Question4 {
     }
 
     public static void main(String[] args){
-        List<Transcript> transcripts = new ArrayList<>();
+        /*List<Transcript> transcripts = new ArrayList<>();
         transcripts.add(new Transcript("语文",93,"n1"));
         transcripts.add(new Transcript("数学",85,"n1"));
         transcripts.add(new Transcript("英语",97,"n1"));
@@ -83,7 +85,17 @@ public class Question4 {
         transcripts.add(new Transcript("数学",87,"n3"));
         transcripts.add(new Transcript("英语",89,"n3"));
         Question4.gather(transcripts);
-        System.out.println(mapCache);
+        System.out.println(mapCache);*/
+        List<Map<String,String>> mapList = new ArrayList<>();
+        for (int i=11;i<18;i++){
+            Map<String,String> map = new HashMap<>();
+            map.put("id",String.valueOf(i));
+            mapList.add(map);
+        }
+        for(Map<String,String> map :mapList){
+            map.put("url","444");
+        }
+        System.out.println(mapList);
     }
 
 }
